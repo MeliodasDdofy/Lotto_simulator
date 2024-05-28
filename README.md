@@ -6,10 +6,12 @@
     Die App soll folgende Grundlagen abdecken
   
       **Webdesign:** Die App sollte HTML, CSS und Teile von JavaScript für das Frontend verwenden. (Siehe Thymeleaf, Bootstrap 5)
-      **Backend und Persistenz:** Java sollte für die Backend-Entwicklung und Berechnungen verwendet werden. Eine PostgreSQL-Datenbank kann verwendet werden, wo Persistenz erforderlich ist. Eine systeminterne h2-Datenbank ist einfacher, in der Praxis jedoch eher für       
+      **Backend und Persistenz:** Java sollte für die Backend-Entwicklung und Berechnungen verwendet werden. Eine PostgreSQL-Datenbank 
+        kann verwendet werden, wo Persistenz erforderlich ist. Eine systeminterne h2-Datenbank ist einfacher, in der Praxis jedoch eher für       
         Testzwecke  # vorgesehen.
       **Versionskontrolle:** GIT muss für die Versionskontrolle verwendet werden.
-      **Projektmanagement und Dokumentation:** GitHub kann zur Erstellung von Tickets und zur Verfassung von Entwickler- und Anwenderdokumentationen verwendet werden. Dafür wird im Root-Verzeichnis des Projekts ein docs-Ordner erstellt und die Dokumentation in die         
+      **Projektmanagement und Dokumentation:** GitHub kann zur Erstellung von Tickets und zur Verfassung von Entwickler- und 
+        Anwenderdokumentationen verwendet werden. Dafür wird im Root-Verzeichnis des Projekts ein docs-Ordner erstellt und die Dokumentation in die         
         einzelnen 
         Phasen unterteilt (siehe Wasserfallmodell).
 # Projekt mit zusammenarbeit von Amine und Cihan.
