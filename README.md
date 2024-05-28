@@ -12,6 +12,5 @@
       **Versionskontrolle:** GIT muss für die Versionskontrolle verwendet werden.
       **Projektmanagement und Dokumentation:** GitHub kann zur Erstellung von Tickets und zur Verfassung von Entwickler- und 
         Anwenderdokumentationen verwendet werden. Dafür wird im Root-Verzeichnis des Projekts ein docs-Ordner erstellt und die Dokumentation in die         
-        einzelnen 
-        Phasen unterteilt (siehe Wasserfallmodell).
+        einzelnen Phasen unterteilt (siehe Wasserfallmodell).
 # Projekt mit zusammenarbeit von Amine und Cihan.
