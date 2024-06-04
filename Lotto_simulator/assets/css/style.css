@@ -1,0 +1,25 @@
+.no-underline{
+    text-decoration: none;
+}
+.grid-container {
+    display: grid;
+    gap: 10px;
+}
+.grid-12 {
+    grid-template-columns: repeat(4, 1fr);
+}
+.grid-49 {
+    grid-template-columns: repeat(7, 1fr);
+
+}
+.grid-item {
+    background-color: #f1f1f185;
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+.selected {
+    background-color: #007bff;
+    color: white;
+}
