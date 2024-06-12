@@ -1,5 +1,6 @@
 .no-underline{
     text-decoration: none;
+    
 }
 .grid-container {
     display: grid;
@@ -15,6 +16,7 @@
 .grid-item {
     background-color: #f1f1f185;
     border: 1px solid #ddd;
+    border-radius: 1px;
     padding: 20px;
     text-align: center;
     cursor: pointer;
@@ -23,3 +25,11 @@
     background-color: #007bff;
     color: white;
 }
+span{
+    font-weight: bold;
+}
+
+
+
+
+

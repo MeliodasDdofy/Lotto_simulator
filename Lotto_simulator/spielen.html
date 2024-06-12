@@ -15,7 +15,7 @@
 <header>
     <div class="navbar navbar-expand-md bg-warning navbar-danger">
         <div class="container">
-            <a href="#" class="navbar-brand ms-1 sticky-top">
+            <a href="index.html" class="navbar-brand ms-1 sticky-top">
                 <img src="assets/GF/logo.png" alt="" width="100" height="100">
             </a>
 
@@ -37,21 +37,54 @@
     </div>
 </header>
 
-<section class="bg-warning text-danger text-center py-5">
-    <div class="container">
-        <button id="endButton" class="btn btn-danger">End</button>
-        <br>
-        <hr>
-        
-        <div id="mainGrid" class="grid-container grid-12">
-            <!-- Main grid items here -->
-            
+<section class="gamearea bg-warning text-danger p-5 d-flex">
+    <div>
+        <div class="parmsarea">
+            <form name="parmsform" class="parms" method="post" action="">
+                <hr>
+                <p><span>Wählen Sie Ihre 6 Glückszahlen von 1 bis 49 für bis zu 12 Spiele. Es wird eine 12-stellige Pinscheinnummer generiert und in einer Textdatei gespeichert.</span></p>
+                <input id="errmsg" type="text" hidden>
+                <div>
+                    <div class="parms text-start">
+                        <input class="btn btn-danger " name="quickpick" id="quickpick" onclick="doQuickPick()"
+                               value="zufällig"/>
+                    </div>
+                    <br>
+                    <div id="gameInputs">
+                        <div class="parms text-center">
+                            <label for="picks1"><span> Geben Sie Ihre gewünschten Zahlen ein.</span></label>
+                            <br><br>
+                            <input class="btn btn-outline-danger" type="number" name="picks1" id="picks1" required
+                                   min="1" max="49" step="1"/>
+                            <input class="btn btn-outline-danger" type="number" name="picks2" id="picks2" required
+                                   min="1" max="49" step="1"/>
+                            <input class="btn btn-outline-danger" type="number" name="picks3" id="picks3" required
+                                   min="1" max="49" step="1"/>
+                            <input class="btn btn-outline-danger" type="number" name="picks4" id="picks4" required
+                                   min="1" max="49" step="1"/>
+                            <input class="btn btn-outline-danger" type="number" name="picks5" id="picks5" required
+                                   min="1" max="49" step="1"/>
+                            <input class="btn btn-outline-danger" type="number" name="picks6" id="picks6" required
+                                   min="1" max="49" step="1"/>
+                        </div>
+                        <br>
+                    </div>
+                    <div class="parms text-center">
+                        <label for="numgames"><span>Anzahl der zu spielenden Spiele.</span></label>
+                        <br><br>
+                        <input class="btn btn-outline-danger" type="number" name="numgames" id="numgames" required
+                               min="1" max="12" step="1" onchange="updateGameInputs()"/>
+                    </div>
+                    <br>
+                    <div class="text-end">
+                        <input class="btn btn-danger" name="runsim" id="runsim"
+                               onclick="doRunSim()" value="Fertig getippt!!">
+                    </div>
+                    <br>
+                    <hr>
+                </div>
+            </form>
         </div>
-        <div id="secondaryGrid" class="grid-container grid-49 d-none">
-            <!-- Secondary grid items here -->
-            <button id="goBackButton" class="btn btn-danger">Zurück</button>
-        </div>
-    </div>
 </section>
 
 <section id="footer" class="bg-warning text-danger">
@@ -77,30 +110,5 @@
 <!-- Custom JS -->
 <script src="assets/js/main.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script>
-    $(document).ready(function() {
-        // Generate 12 squares in the main grid
-        for (let i = 1; i <= 12; i++) {
-            $('#mainGrid').append(`<div class="grid-item" data-id="${i}">${i}</div>`);
-        }
-
-        // Generate 49 squares in the secondary grid
-        for (let i = 1; i <= 49; i++) {
-            $('#secondaryGrid').append(`<div class="grid-item" data-id="${i}">${i}</div>`);
-        }
-
-        // Handle click event on main grid items
-        $('#mainGrid').on('click', '.grid-item', function() {
-            $('#mainGrid').addClass('d-none');
-            $('#secondaryGrid').removeClass('d-none');
-        });
-
-        // Handle click event on the "Go Back" button
-        $('#goBackButton').on('click', function() {
-            $('#secondaryGrid').addClass('d-none');
-            $('#mainGrid').removeClass('d-none');
-        });
-    });
-</script>
 </body>
 </html>

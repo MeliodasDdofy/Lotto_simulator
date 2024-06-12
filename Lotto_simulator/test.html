@@ -1,90 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Grid System</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .grid-container {
-            display: grid;
-            gap: 10px;
-        }
-        .grid-12 {
-            grid-template-columns: repeat(4, 1fr);
-        }
-        .grid-49 {
-            grid-template-columns: repeat(7, 1fr);
-        }
-        .grid-item {
-            background-color: #f1f1f1;
-            border: 1px solid #ddd;
-            padding: 20px;
-            text-align: center;
-            cursor: pointer;
-        }
-        .selected {
-            background-color: #007bff;
-            color: white;
-        }
-    </style>
-</head>
-<body>
+<section class="bg-warning text-danger text-center py-5">
+    <div class="container">
+        <!-- Main Grid Section -->
+        <div id="mainGrid" class="grid-container grid-12">
+            <div class="d-flex justify-content-end mb-3">
+                <button id="endButton" class="btn btn-danger">Spiel beenden</button>
+            </div>
+            <!-- Main grid items here -->
+            <div class="row">
+                <!-- Example of squares in the main grid -->
+                <div class="col-3 main-grid-item" data-grid="1">Square 1</div>
+                <div class="col-3 main-grid-item" data-grid="2">Square 2</div>
+                <div class="col-3 main-grid-item" data-grid="3">Square 3</div>
+                <div class="col-3 main-grid-item" data-grid="4">Square 4</div>
+                <!-- Add more squares as needed -->
+            </div>
+        </div>
 
-<div class="container mt-5">
-    <div id="mainGrid" class="grid-container grid-12">
-        <!-- 12 squares grid will be generated here -->
+        <!-- Secondary Grid Sections -->
+        <div id="secondaryGrid1" class="grid-container grid-49 secondary-grid d-none">
+            <div class="d-flex justify-content-between mb-3">
+                <button class="btn btn-danger goBackButton">Zurück</button>
+                <button class="btn btn-danger d-none nextButton">Weiter</button>
+            </div>
+            <!-- Secondary grid 1 items here -->
+        </div>
+        <div id="secondaryGrid2" class="grid-container grid-49 secondary-grid d-none">
+            <div class="d-flex justify-content-between mb-3">
+                <button class="btn btn-danger goBackButton">Zurück</button>
+                <button class="btn btn-danger d-none nextButton">Weiter</button>
+            </div>
+            <!-- Secondary grid 2 items here -->
+        </div>
+        <!-- Add more secondary grids as needed -->
     </div>
-    <div id="secondaryGrid" class="grid-container grid-49 d-none">
-        <!-- 49 squares grid will be generated here -->
-    </div>
-</div>
-
-<!-- Bootstrap and jQuery JS -->
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script>
-    $(document).ready(function() {
-        // Generate 12 squares in the main grid
-        for (let i = 1; i <= 12; i++) {
-            $('#mainGrid').append(`<div class="grid-item" data-id="${i}">${i}</div>`);
-        }
-
-        // Generate 49 squares in the secondary grid
-        for (let i = 1; i <= 49; i++) {
-            $('#secondaryGrid').append(`<div class="grid-item" data-id="${i}">${i}</div>`);
-        }
-
-        // Handle click event on main grid items
-        $('#mainGrid').on('click', '.grid-item', function() {
-            $('#mainGrid').addClass('d-none');
-            $('#secondaryGrid').removeClass('d-none');
-        });
-
-        // Handle click event on secondary grid items
-        $('#secondaryGrid').on('click', '.grid-item', function() {
-            $(this).toggleClass('selected');
-        });
-    });
-</script>
-
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Bootstrap JS -->
-    <!-- Custom JS -->
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/main.js"></script>
-</body>
-</html>
+</section>
